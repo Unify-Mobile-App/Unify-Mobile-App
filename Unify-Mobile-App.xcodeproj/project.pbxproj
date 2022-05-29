@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		125B738F2843F96C00293086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B738E2843F96C00293086 /* AppDelegate.swift */; };
+		125B73912843F96C00293086 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B73902843F96C00293086 /* SceneDelegate.swift */; };
+		125B73932843F96C00293086 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B73922843F96C00293086 /* ViewController.swift */; };
+		125B73962843F96C00293086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B73942843F96C00293086 /* Main.storyboard */; };
+		125B73982843F96E00293086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 125B73972843F96E00293086 /* Assets.xcassets */; };
+		125B739B2843F96E00293086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B73992843F96E00293086 /* LaunchScreen.storyboard */; };
+		125B73A62843F96E00293086 /* Unify_Mobile_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B73A52843F96E00293086 /* Unify_Mobile_AppTests.swift */; };
+		125B73B02843F96E00293086 /* Unify_Mobile_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B73AF2843F96E00293086 /* Unify_Mobile_AppUITests.swift */; };
+		125B73B22843F96E00293086 /* Unify_Mobile_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B73B12843F96E00293086 /* Unify_Mobile_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		125B73A22843F96E00293086 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 125B73832843F96B00293086 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 125B738A2843F96B00293086;
+			remoteInfo = "Unify-Mobile-App";
+		};
+		125B73AC2843F96E00293086 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 125B73832843F96B00293086 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 125B738A2843F96B00293086;
+			remoteInfo = "Unify-Mobile-App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		125B738B2843F96B00293086 /* Unify-Mobile-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unify-Mobile-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		125B738E2843F96C00293086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		125B73902843F96C00293086 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		125B73922843F96C00293086 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		125B73952843F96C00293086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		125B73972843F96E00293086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		125B739A2843F96E00293086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		125B739C2843F96E00293086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		125B73A12843F96E00293086 /* Unify-Mobile-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unify-Mobile-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		125B73A52843F96E00293086 /* Unify_Mobile_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unify_Mobile_AppTests.swift; sourceTree = "<group>"; };
+		125B73AB2843F96E00293086 /* Unify-Mobile-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unify-Mobile-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		125B73AF2843F96E00293086 /* Unify_Mobile_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unify_Mobile_AppUITests.swift; sourceTree = "<group>"; };
+		125B73B12843F96E00293086 /* Unify_Mobile_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unify_Mobile_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		125B73882843F96B00293086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		125B739E2843F96E00293086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		125B73A82843F96E00293086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		125B73822843F96B00293086 = {
+			isa = PBXGroup;
+			children = (
+				125B738D2843F96B00293086 /* Unify-Mobile-App */,
+				125B73A42843F96E00293086 /* Unify-Mobile-AppTests */,
+				125B73AE2843F96E00293086 /* Unify-Mobile-AppUITests */,
+				125B738C2843F96B00293086 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		125B738C2843F96B00293086 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				125B738B2843F96B00293086 /* Unify-Mobile-App.app */,
+				125B73A12843F96E00293086 /* Unify-Mobile-AppTests.xctest */,
+				125B73AB2843F96E00293086 /* Unify-Mobile-AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		125B738D2843F96B00293086 /* Unify-Mobile-App */ = {
+			isa = PBXGroup;
+			children = (
+				125B738E2843F96C00293086 /* AppDelegate.swift */,
+				125B73902843F96C00293086 /* SceneDelegate.swift */,
+				125B73922843F96C00293086 /* ViewController.swift */,
+				125B73942843F96C00293086 /* Main.storyboard */,
+				125B73972843F96E00293086 /* Assets.xcassets */,
+				125B73992843F96E00293086 /* LaunchScreen.storyboard */,
+				125B739C2843F96E00293086 /* Info.plist */,
+			);
+			path = "Unify-Mobile-App";
+			sourceTree = "<group>";
+		};
+		125B73A42843F96E00293086 /* Unify-Mobile-AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				125B73A52843F96E00293086 /* Unify_Mobile_AppTests.swift */,
+			);
+			path = "Unify-Mobile-AppTests";
+			sourceTree = "<group>";
+		};
+		125B73AE2843F96E00293086 /* Unify-Mobile-AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				125B73AF2843F96E00293086 /* Unify_Mobile_AppUITests.swift */,
+				125B73B12843F96E00293086 /* Unify_Mobile_AppUITestsLaunchTests.swift */,
+			);
+			path = "Unify-Mobile-AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		125B738A2843F96B00293086 /* Unify-Mobile-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 125B73B52843F96E00293086 /* Build configuration list for PBXNativeTarget "Unify-Mobile-App" */;
+			buildPhases = (
+				125B73872843F96B00293086 /* Sources */,
+				125B73882843F96B00293086 /* Frameworks */,
+				125B73892843F96B00293086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unify-Mobile-App";
+			productName = "Unify-Mobile-App";
+			productReference = 125B738B2843F96B00293086 /* Unify-Mobile-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		125B73A02843F96E00293086 /* Unify-Mobile-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 125B73B82843F96E00293086 /* Build configuration list for PBXNativeTarget "Unify-Mobile-AppTests" */;
+			buildPhases = (
+				125B739D2843F96E00293086 /* Sources */,
+				125B739E2843F96E00293086 /* Frameworks */,
+				125B739F2843F96E00293086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				125B73A32843F96E00293086 /* PBXTargetDependency */,
+			);
+			name = "Unify-Mobile-AppTests";
+			productName = "Unify-Mobile-AppTests";
+			productReference = 125B73A12843F96E00293086 /* Unify-Mobile-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		125B73AA2843F96E00293086 /* Unify-Mobile-AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 125B73BB2843F96E00293086 /* Build configuration list for PBXNativeTarget "Unify-Mobile-AppUITests" */;
+			buildPhases = (
+				125B73A72843F96E00293086 /* Sources */,
+				125B73A82843F96E00293086 /* Frameworks */,
+				125B73A92843F96E00293086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				125B73AD2843F96E00293086 /* PBXTargetDependency */,
+			);
+			name = "Unify-Mobile-AppUITests";
+			productName = "Unify-Mobile-AppUITests";
+			productReference = 125B73AB2843F96E00293086 /* Unify-Mobile-AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		125B73832843F96B00293086 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					125B738A2843F96B00293086 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					125B73A02843F96E00293086 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 125B738A2843F96B00293086;
+					};
+					125B73AA2843F96E00293086 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 125B738A2843F96B00293086;
+					};
+				};
+			};
+			buildConfigurationList = 125B73862843F96B00293086 /* Build configuration list for PBXProject "Unify-Mobile-App" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 125B73822843F96B00293086;
+			productRefGroup = 125B738C2843F96B00293086 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				125B738A2843F96B00293086 /* Unify-Mobile-App */,
+				125B73A02843F96E00293086 /* Unify-Mobile-AppTests */,
+				125B73AA2843F96E00293086 /* Unify-Mobile-AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		125B73892843F96B00293086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				125B739B2843F96E00293086 /* LaunchScreen.storyboard in Resources */,
+				125B73982843F96E00293086 /* Assets.xcassets in Resources */,
+				125B73962843F96C00293086 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		125B739F2843F96E00293086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		125B73A92843F96E00293086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		125B73872843F96B00293086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				125B73932843F96C00293086 /* ViewController.swift in Sources */,
+				125B738F2843F96C00293086 /* AppDelegate.swift in Sources */,
+				125B73912843F96C00293086 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		125B739D2843F96E00293086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				125B73A62843F96E00293086 /* Unify_Mobile_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		125B73A72843F96E00293086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				125B73B22843F96E00293086 /* Unify_Mobile_AppUITestsLaunchTests.swift in Sources */,
+				125B73B02843F96E00293086 /* Unify_Mobile_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		125B73A32843F96E00293086 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 125B738A2843F96B00293086 /* Unify-Mobile-App */;
+			targetProxy = 125B73A22843F96E00293086 /* PBXContainerItemProxy */;
+		};
+		125B73AD2843F96E00293086 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 125B738A2843F96B00293086 /* Unify-Mobile-App */;
+			targetProxy = 125B73AC2843F96E00293086 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		125B73942843F96C00293086 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				125B73952843F96C00293086 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		125B73992843F96E00293086 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				125B739A2843F96E00293086 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		125B73B32843F96E00293086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		125B73B42843F96E00293086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		125B73B62843F96E00293086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ZGQ8R6GXK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Unify-Mobile-App/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Melvinasare.Unify-Mobile-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		125B73B72843F96E00293086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ZGQ8R6GXK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Unify-Mobile-App/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Melvinasare.Unify-Mobile-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		125B73B92843F96E00293086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ZGQ8R6GXK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Melvinasare.Unify-Mobile-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unify-Mobile-App.app/Unify-Mobile-App";
+			};
+			name = Debug;
+		};
+		125B73BA2843F96E00293086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ZGQ8R6GXK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Melvinasare.Unify-Mobile-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unify-Mobile-App.app/Unify-Mobile-App";
+			};
+			name = Release;
+		};
+		125B73BC2843F96E00293086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ZGQ8R6GXK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Melvinasare.Unify-Mobile-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Unify-Mobile-App";
+			};
+			name = Debug;
+		};
+		125B73BD2843F96E00293086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ZGQ8R6GXK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Melvinasare.Unify-Mobile-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Unify-Mobile-App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		125B73862843F96B00293086 /* Build configuration list for PBXProject "Unify-Mobile-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				125B73B32843F96E00293086 /* Debug */,
+				125B73B42843F96E00293086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		125B73B52843F96E00293086 /* Build configuration list for PBXNativeTarget "Unify-Mobile-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				125B73B62843F96E00293086 /* Debug */,
+				125B73B72843F96E00293086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		125B73B82843F96E00293086 /* Build configuration list for PBXNativeTarget "Unify-Mobile-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				125B73B92843F96E00293086 /* Debug */,
+				125B73BA2843F96E00293086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		125B73BB2843F96E00293086 /* Build configuration list for PBXNativeTarget "Unify-Mobile-AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				125B73BC2843F96E00293086 /* Debug */,
+				125B73BD2843F96E00293086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 125B73832843F96B00293086 /* Project object */;
+}
