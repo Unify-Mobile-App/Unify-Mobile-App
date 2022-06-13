@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Unify-Mobile-AppTests/Pods-Unify-Mobile-AppTests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework
+${BUILT_PRODUCTS_DIR}/ViewControllerPresentationSpy/ViewControllerPresentationSpy.framework

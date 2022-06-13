@@ -1,0 +1,36 @@
+PODS:
+  - Floaty (4.2.0)
+  - IQKeyboardManagerSwift (6.5.10)
+  - Nimble (10.0.0)
+  - Observable (2.2.0)
+  - SearchTextField (1.2.4)
+  - ViewControllerPresentationSpy (6.0.0)
+
+DEPENDENCIES:
+  - Floaty
+  - IQKeyboardManagerSwift
+  - Nimble
+  - Observable
+  - SearchTextField
+  - ViewControllerPresentationSpy (~> 6.0)
+
+SPEC REPOS:
+  trunk:
+    - Floaty
+    - IQKeyboardManagerSwift
+    - Nimble
+    - Observable
+    - SearchTextField
+    - ViewControllerPresentationSpy
+
+SPEC CHECKSUMS:
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
+  Observable: d5369c555eae9d022cb066867786f6b9470de33c
+  SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
+  ViewControllerPresentationSpy: 16d2f083f506c0a18fe82e65d2c19fbea9aa66af
+
+PODFILE CHECKSUM: 58b7af794ab109c8a019b2879eb703e7160ac5c2
+
+COCOAPODS: 1.11.3
