@@ -73,16 +73,16 @@ class UIViewControllerExtensionTests: XCTestCase {
         expect(isUsernameValid).to(equal(false))
     }
 
-    // TODO: Fix these tests
-//    func test_removed_whiteSpaces() {
-//        let removedWhitespace = viewController.removeWhiteSpace(text: "Just Another Day")
-//        expect(removedWhitespace).to(equal("JustAnotherDay"))
-//    }
-//
-//    func test_contained_whiteSpaces() {
-//        let containsWhitespace = viewController.removeWhiteSpace(text: "Just Another Day")
-//        expect(containsWhitespace).to(equal("Just Another Day"))
-//    }
+     TODO: Fix these tests
+    func test_removed_whiteSpaces() {
+        let removedWhitespace = viewController.removeWhiteSpace(text: "Just Another Day")
+        expect(removedWhitespace).to(equal("JustAnotherDay"))
+    }
+
+    func test_contained_whiteSpaces() {
+        let containsWhitespace = viewController.removeWhiteSpace(text: "Just Another Day")
+        expect(containsWhitespace).to(equal("Just Another Day"))
+    }
 
     func test_is_current_user() {
         let isCurrentUser = viewController.isCurrentUser(currentUserId: "user1", userId: "user1")
