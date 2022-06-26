@@ -159,13 +159,18 @@ extension UIViewController {
     }
 
     public func signOut() {
-//        AccountManager.account.signOut { [weak self] success in
-//            if success {
-//                let viewModel = OnboardingViewModel()
-//                let viewController = LoginViewController(viewModel: viewModel)
-//                self?.navigationController?.pushViewController(viewController, animated: true)
-//            }
-//        }
+        AccountManager.account.signOut { [weak self] success, error  in
+            if success {
+                let viewModel = OnboardingViewModel()
+                let viewController = LoginOptionsViewController(viewModel: viewModel)
+                self?.navigationController?.pushViewController(viewController, animated: true)
+            }
+
+            if error != nil {
+                self?.presentAlert(title: "Error", message: "Couldnlt log out", buttonTitle: "oKAY THEN")
+                return
+            }
+        }
     }
 }
 

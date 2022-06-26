@@ -77,12 +77,12 @@ class AccountManager {
 
     public func updateFriendRequests(_ completion: (() -> Void)? = nil) { }
 
-    public func signOut(completion: @escaping (Bool) -> Void) {
+    public func signOut(completion: @escaping (Bool, Error?) -> Void) {
         do {
             try Auth.auth().signOut()
-            completion(true)
+            completion(true, nil)
         } catch let error {
-            completion(false)
+            completion(false, error)
         }
     }
 
