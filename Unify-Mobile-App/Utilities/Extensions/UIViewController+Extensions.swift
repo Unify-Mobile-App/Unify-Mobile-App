@@ -164,6 +164,7 @@ extension UIViewController {
                 let viewModel = OnboardingViewModel()
                 let viewController = LoginOptionsViewController(viewModel: viewModel)
                 self?.navigationController?.pushViewController(viewController, animated: true)
+                return
             }
 
             if error != nil {
