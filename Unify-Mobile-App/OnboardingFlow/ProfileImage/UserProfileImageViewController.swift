@@ -47,8 +47,15 @@ class UserProfileImageViewController: OnboardingViewController {
     private let viewModel: OnboardingViewModel
 
     override func continueButtonTapped() {
+        print("5")
+
         viewModel.uploadImageToFirebaseStorage(avatarView: avatarView) { [weak self] success in
+            print("6")
+
             if success == .completed {
+
+                print("7")
+
                 self?.viewModel.saveOnboardingState(stringValue: "profile_picture", is_stage_complete: self?.convertEnumToString(state: .completed) ?? "uncomplete", isOnboardingComplete: false, userId: self?.viewModel.currentUserId ?? "no user id", completion: { success in
                     if success {
                         self?.navigationController?.pushViewController(SelectUniversityViewController(viewModel: OnboardingViewModel()), animated: true)

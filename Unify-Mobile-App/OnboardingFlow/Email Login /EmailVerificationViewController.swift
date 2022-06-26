@@ -52,27 +52,21 @@ public class EmailVerificationViewController: OnboardingViewController {
             self.presentAlert(title: Unify.strings.error, message: UnifyErrors.invalidEmail.rawValue, buttonTitle: Unify.strings.ok)
         }
 
-        NetworkManager.shared.signInViaEmail(email: email, password: password) { success, error in
-            print(success, error)
+        if !isPasswordValid(password: password) {
+            self.presentAlert(title: Unify.strings.error, message: UnifyErrors.invalidPassword.rawValue, buttonTitle: Unify.strings.ok)
         }
 
+        self.viewModel.signInWithEmail(email: email, password: password) { success, error in
+            if success {
+                self.navigationController?.pushViewController(HomeViewController(viewModel: HomeViewModel()), animated: true)
+                return
+            }
 
-//        if !isPasswordValid(password: password) {
-//            self.presentAlert(title: Unify.strings.error, message: UnifyErrors.invalidPassword.rawValue, buttonTitle: Unify.strings.ok)
-//        }
-
-//        self.viewModel.signInWithEmail(email: email, password: password) { success, error in
-//            if success {
-//                self.navigationController?.pushViewController(HomeViewController(viewModel: HomeViewModel()), animated: true)
-//                return
-//            }
-//
-//            if error != nil {
-//                self.setErrors(error: error?.localizedDescription ?? "")
-//                return
-//            }
-//        }
-
+            if error != nil {
+                self.setErrors(error: error?.localizedDescription ?? "")
+                return
+            }
+        }
     }
 
     required init(viewModel: OnboardingViewModel) {
