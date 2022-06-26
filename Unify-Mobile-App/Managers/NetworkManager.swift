@@ -15,13 +15,17 @@ class NetworkManager {
     private let userDefaults = UserDefaults.standard
     public var users = [User]()
     public var reset = false
+    public let databaseRegion = Unify.strings.databaseRegion
 
     // MARK: - Email Verification
 
-    func signInViaEmail(email: String, password: String, completion: @escaping (AuthDataResult, Error?) -> Void) {
+    func signInViaEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            guard let auth = result else { return }
-            print(error?.localizedDescription, auth.user.uid)
+            guard result != nil else { return }
+            if error != nil {
+                return
+            }
+            completion(true, error)
         }
     }
 
@@ -53,7 +57,7 @@ extension NetworkManager {
     }
 
     func fetchAllUsers(_ completion: @escaping ([User])-> Void) {
-        Database.database().reference(withPath: Unify.strings.users).observe(.childAdded) { [weak self] (snapshot) in
+        Database.database(url: self.databaseRegion).reference(withPath: Unify.strings.users).observe(.childAdded) { [weak self] (snapshot) in
             guard let self = self else { return }
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 if self.reset {
@@ -93,7 +97,7 @@ extension NetworkManager {
 
     public func saveOnboardingState(stringValue: String, is_stage_complete: String, isOnboardingComplete: Bool? , userId: String?, completion: @escaping (Bool) -> Void) {
         if userId != nil {
-            let reference = Database.database().reference(withPath: "Onboarding_status")
+            let reference = Database.database(url: self.databaseRegion).reference(withPath: "Onboarding_status")
             let userReference = reference.child(Auth.auth().currentUser?.uid ?? "No UID")
             let value = [stringValue: is_stage_complete, "is_onboarding_complete": isOnboardingComplete as Any] as [String : Any]
             userReference.updateChildValues(value) { error, reference in
@@ -115,7 +119,7 @@ extension NetworkManager {
 extension NetworkManager {
 
     public func addUsernameToDatabase(name: String, completion: @escaping (OnboardingStateProgressEnum)-> Void) {
-        let reference = Database.database().reference().child(Unify.strings.users)
+        let reference = Database.database(url: self.databaseRegion).reference().child(Unify.strings.users)
         let userReference = reference.child(Auth.auth().currentUser?.uid ?? "No UID")
 
         let values = ["name": name]
@@ -136,7 +140,7 @@ extension NetworkManager {
 
     public func addUserIdToDatabase(completion: @escaping (OnboardingStateProgressEnum)-> Void) {
         let userId = Auth.auth().currentUser?.uid ?? "No UID"
-        let reference = Database.database().reference().child(Unify.strings.users)
+        let reference = Database.database(url: self.databaseRegion).reference().child(Unify.strings.users)
         let userReference = reference.child(userId)
         let values = ["userID": userId]
         userReference.updateChildValues(values) { (error, reference) in
@@ -148,7 +152,7 @@ extension NetworkManager {
     }
 
     public func addUniversityToDatabase(universityName: String, completion: @escaping (OnboardingStateProgressEnum)-> Void) {
-        let reference = Database.database().reference(withPath: Unify.strings.users)
+        let reference = Database.database(url: self.databaseRegion).reference(withPath: Unify.strings.users)
         let universityNameReference = reference.child(Auth.auth().currentUser?.uid ?? "No UID")
         let universityNameValue = ["university_name": universityName]
         universityNameReference.updateChildValues(universityNameValue) { [weak self] (error, reference) in
@@ -161,7 +165,7 @@ extension NetworkManager {
     }
 
     public func addCourseToDatabase(course: String, completion: @escaping (OnboardingStateProgressEnum)-> Void) {
-        let reference = Database.database().reference(withPath: Unify.strings.users)
+        let reference = Database.database(url: self.databaseRegion).reference(withPath: Unify.strings.users)
         let userReference = reference.child(Auth.auth().currentUser?.uid ?? "No UID")
         let value = ["course": course]
         userReference.updateChildValues(value) { [weak self] (error, reference) in
@@ -175,7 +179,7 @@ extension NetworkManager {
     }
 
     public func addYearToDatabase(year: String, completion: @escaping (OnboardingStateProgressEnum)-> Void) {
-        let reference = Database.database().reference(withPath: Unify.strings.users)
+        let reference = Database.database(url: self.databaseRegion).reference(withPath: Unify.strings.users)
         let userReference = reference.child(Auth.auth().currentUser?.uid ?? "No UID")
         let value = ["year": year]
         userReference.updateChildValues(value) { [weak self] (error, reference) in
@@ -189,7 +193,7 @@ extension NetworkManager {
     }
 
     public func addInterestsToDatabase(interests: [String], completion: @escaping (OnboardingStateProgressEnum)-> Void) {
-        let reference = Database.database().reference(withPath: Unify.strings.users)
+        let reference = Database.database(url: self.databaseRegion).reference(withPath: Unify.strings.users)
         let userReference = reference.child(Auth.auth().currentUser?.uid ?? "No UID")
         let value = ["interests": interests ]
         userReference.updateChildValues(value) { (error, reference) in
@@ -202,7 +206,7 @@ extension NetworkManager {
 
     public func addPrivateDataToDatabase(dob: String, gender: String, nationality: String, completion: @escaping (OnboardingStateProgressEnum)-> Void) {
 
-        let reference = Database.database().reference(withPath: Unify.strings.users)
+        let reference = Database.database(url: self.databaseRegion).reference(withPath: Unify.strings.users)
         let userReference = reference.child(Auth.auth().currentUser?.uid ?? "No UID")
         let value = ["date_of_birth": dob, "gender": gender, "nationality": nationality]
         userReference.updateChildValues(value as [AnyHashable : Any]) { (error, reference) in
@@ -221,6 +225,7 @@ extension NetworkManager {
             completion(false)
             return
         }
+        print("1")
         let imageName = UUID().uuidString
         let imageReference = Storage.storage().reference().child(Unify.strings.profile_picture).child(imageName)
 
@@ -229,6 +234,7 @@ extension NetworkManager {
 
             imageReference.downloadURL { (url, error) in
                 if error != nil { return }
+                print("2")
 
                 guard let url = url else { return }
 
@@ -236,7 +242,7 @@ extension NetworkManager {
                 let documentUid = dataReference.documentID
                 let urlString = url.absoluteString
 
-                let userReference = Database.database().reference(withPath: Unify.strings.users).child(Auth.auth().currentUser?.uid ?? "No UID")
+                let userReference = Database.database(url: self.databaseRegion).reference(withPath: Unify.strings.users).child(Auth.auth().currentUser?.uid ?? "No UID")
 
                 let values = [Unify.strings.profile_picture: urlString]
                 userReference.updateChildValues(values) { [weak self] (error, reference) in
@@ -245,10 +251,12 @@ extension NetworkManager {
                         self?.saveUserAvatar(avatar: urlString)
                     }
                 }
+                print("3")
 
                 let data = [Unify.strings.profile_picture_uid: documentUid, Unify.strings.profile_url: url.absoluteString] as [String : Any]
                 dataReference.setData(data) { (error) in
                     if error != nil { return }
+                    print("4")
 
                     self.userDefaults.set(documentUid, forKey: Unify.strings.profile_picture_uid)
                     avatarView.image = UIImage()

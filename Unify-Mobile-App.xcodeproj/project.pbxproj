@@ -32,7 +32,6 @@
 		12200C2E28494D7B009C315E /* UnifyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200C2728494D7B009C315E /* UnifyNavigationController.swift */; };
 		12200C2F28494D7B009C315E /* UnifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200C2828494D7B009C315E /* UnifyButton.swift */; };
 		12200C3028494D7B009C315E /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200C2928494D7B009C315E /* AvatarView.swift */; };
-		12200C32284950E8009C315E /* MockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200C31284950E8009C315E /* MockFirebase.swift */; };
 		12200C3F2849560E009C315E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200C342849560E009C315E /* Strings.swift */; };
 		12200C402849560E009C315E /* UnifyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200C352849560E009C315E /* UnifyColors.swift */; };
 		12200C412849560E009C315E /* UnifyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200C362849560E009C315E /* UnifyErrors.swift */; };
@@ -97,6 +96,7 @@
 		125E79C4284B70C100A0ABC4 /* StringsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125E79C3284B70C100A0ABC4 /* StringsTests.swift */; };
 		125E79C6284BC7D200A0ABC4 /* OnboardingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125E79C5284BC7D200A0ABC4 /* OnboardingViewControllerTests.swift */; };
 		125E79C8284BD2CF00A0ABC4 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125E79C7284BD2CF00A0ABC4 /* NetworkManagerTests.swift */; };
+		1271B1FE28684DE600C6CF84 /* FirebaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */; };
 		607EA49A0C42C76742B7206B /* Pods_Unify_Mobile_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5674DCC93F9A5BFFD56156D6 /* Pods_Unify_Mobile_App.framework */; };
 		C34AD1194851D09BE5EF72EC /* Pods_Unify_Mobile_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C12D687DAE9C27142FE8D5 /* Pods_Unify_Mobile_AppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -144,7 +144,6 @@
 		12200C2728494D7B009C315E /* UnifyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnifyNavigationController.swift; sourceTree = "<group>"; };
 		12200C2828494D7B009C315E /* UnifyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnifyButton.swift; sourceTree = "<group>"; };
 		12200C2928494D7B009C315E /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
-		12200C31284950E8009C315E /* MockFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebase.swift; sourceTree = "<group>"; };
 		12200C342849560E009C315E /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		12200C352849560E009C315E /* UnifyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnifyColors.swift; sourceTree = "<group>"; };
 		12200C362849560E009C315E /* UnifyErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnifyErrors.swift; sourceTree = "<group>"; };
@@ -196,6 +195,7 @@
 		125E79C3284B70C100A0ABC4 /* StringsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsTests.swift; sourceTree = "<group>"; };
 		125E79C5284BC7D200A0ABC4 /* OnboardingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewControllerTests.swift; sourceTree = "<group>"; };
 		125E79C7284BD2CF00A0ABC4 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMocks.swift; sourceTree = "<group>"; };
 		1618A9DAAEAE736B03957898 /* Pods-Unify-Mobile-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unify-Mobile-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Unify-Mobile-AppTests/Pods-Unify-Mobile-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		172ACBA7F5A912C79A7126C9 /* Pods_Unify_Mobile_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unify_Mobile_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D31F0E0E5BF0D35A109AC18 /* Pods-Unify-Mobile-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unify-Mobile-App.debug.xcconfig"; path = "Target Support Files/Pods-Unify-Mobile-App/Pods-Unify-Mobile-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -379,7 +379,6 @@
 				125B73C02843FE1B00293086 /* NetworkManager.swift */,
 				12200CA12849785C009C315E /* AppleAccountManager.swift */,
 				12200C7128496651009C315E /* AccountManager.swift */,
-				12200C31284950E8009C315E /* MockFirebase.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -595,6 +594,7 @@
 			children = (
 				125B738E2843F96C00293086 /* AppDelegate.swift */,
 				125B73902843F96C00293086 /* SceneDelegate.swift */,
+				1271B1FF28684DF700C6CF84 /* Mocks */,
 				12200C79284975C9009C315E /* OnboardingFlow */,
 				12200CA3284A1950009C315E /* Screens */,
 				12200C2228494D7B009C315E /* Views */,
@@ -661,6 +661,14 @@
 				125B73AF2843F96E00293086 /* LoginOptionsViewControllerUITests.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1271B1FF28684DF700C6CF84 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		25360DFC4C1CBFCDACB0E07D /* Frameworks */ = {
@@ -803,9 +811,9 @@
 			packageReferences = (
 				12200C4928495EA1009C315E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				12200C6428495FC0009C315E /* XCRemoteSwiftPackageReference "MessageKit" */,
-				12200C672849602F009C315E /* XCRemoteSwiftPackageReference "PanModal.git" */,
-				12200C6A284960C7009C315E /* XCRemoteSwiftPackageReference "SDWebImage.git" */,
-				12200C6D28496231009C315E /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */,
+				12200C672849602F009C315E /* XCRemoteSwiftPackageReference "PanModal" */,
+				12200C6A284960C7009C315E /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				12200C6D28496231009C315E /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 125B738C2843F96B00293086 /* Products */;
 			projectDirPath = "";
@@ -1002,6 +1010,7 @@
 				12200C402849560E009C315E /* UnifyColors.swift in Sources */,
 				12200CCC284A1950009C315E /* UsersTableViewCell.swift in Sources */,
 				12200C9828497651009C315E /* SelectYearViewController.swift in Sources */,
+				1271B1FE28684DE600C6CF84 /* FirebaseMocks.swift in Sources */,
 				12200CA22849785C009C315E /* AppleAccountManager.swift in Sources */,
 				12200C7C2849761E009C315E /* EmailVerificationViewController.swift in Sources */,
 				12200CC8284A1950009C315E /* ProfileViewController.swift in Sources */,
@@ -1023,7 +1032,6 @@
 				12200C9528497651009C315E /* SelectCourseViewController.swift in Sources */,
 				12200C2B28494D7B009C315E /* UnifyTitleLabel.swift in Sources */,
 				12200C452849560E009C315E /* UserDefaults+Extensions.swift in Sources */,
-				12200C32284950E8009C315E /* MockFirebase.swift in Sources */,
 				12200C0F2849475B009C315E /* Chat.swift in Sources */,
 				125B73C12843FE1B00293086 /* NetworkManager.swift in Sources */,
 				12200C7F28497631009C315E /* EmailSignUpViewController.swift in Sources */,
@@ -1442,7 +1450,7 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		12200C672849602F009C315E /* XCRemoteSwiftPackageReference "PanModal.git" */ = {
+		12200C672849602F009C315E /* XCRemoteSwiftPackageReference "PanModal" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/slackhq/PanModal.git";
 			requirement = {
@@ -1450,7 +1458,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		12200C6A284960C7009C315E /* XCRemoteSwiftPackageReference "SDWebImage.git" */ = {
+		12200C6A284960C7009C315E /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
@@ -1458,7 +1466,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		12200C6D28496231009C315E /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */ = {
+		12200C6D28496231009C315E /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
 			requirement = {
@@ -1541,17 +1549,17 @@
 		};
 		12200C682849602F009C315E /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 12200C672849602F009C315E /* XCRemoteSwiftPackageReference "PanModal.git" */;
+			package = 12200C672849602F009C315E /* XCRemoteSwiftPackageReference "PanModal" */;
 			productName = PanModal;
 		};
 		12200C6B284960C7009C315E /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 12200C6A284960C7009C315E /* XCRemoteSwiftPackageReference "SDWebImage.git" */;
+			package = 12200C6A284960C7009C315E /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
 		12200C6E28496231009C315E /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 12200C6D28496231009C315E /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */;
+			package = 12200C6D28496231009C315E /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */

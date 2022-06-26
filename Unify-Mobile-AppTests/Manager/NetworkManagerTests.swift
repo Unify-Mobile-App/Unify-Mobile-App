@@ -6,19 +6,24 @@
 //
 
 import XCTest
-import Foundation
+import Nimble
 
 @testable import Unify_Mobile_App
 
 class NetworkManagerTests: XCTestCase {
 
-    private var networkManager = NSObject()
 
     override func setUpWithError() throws {
-        networkManager = NetworkManager() as! NSObject
+
     }
 
 
+    func test_database_region_url() {
+        let databaseRegion = NetworkManager.shared.databaseRegion
+        // Need a test case 
+        expect(databaseRegion).to(equal("https://unify-mobile-app-5ef49-default-rtdb.europe-west1.firebasedatabase.app"))
+        
+    }
 
     func testExample() throws {
         // This is an example of a functional test case.

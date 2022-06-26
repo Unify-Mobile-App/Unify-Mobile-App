@@ -25,25 +25,33 @@ class OnboardingViewModel {
         AppleAccountManager.shared.performSignIn()
     }
 
-
     public func signInWithEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         NetworkManager.shared.signInViaEmail(email: email, password: password) { success, error in
             print(success, error?.localizedDescription)
+            if error != nil {
+                return
+            }
+            completion(success, error)
         }
     }
 
     public func createAccountWithEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
-        NetworkManager.shared.createAccountViaEmail(email: email, password: password) { success, error in
-            print(success, error)
-
+        NetworkManager.shared.createAccountViaEmail(email: email, password: password) { result, error in
+            if error != nil {
+                return
+            }
+            if result.user.uid.isEmpty == false {
+                completion(true, error)
+            }
         }
     }
+    
     public func hasUserAlreadyCompletedOnboarding(completion: @escaping (Bool) -> Void) {
         AccountManager.account.hasUserAlreadyCompletedOnboarding { activeAccount in
             if activeAccount == true {
-                completion(true)
+                completion(activeAccount)
             } else {
-                completion(false)
+                completion(activeAccount)
             }
         }
     }

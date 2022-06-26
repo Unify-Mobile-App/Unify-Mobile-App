@@ -42,7 +42,9 @@ class EmailSignUpViewController: OnboardingViewController {
 
         guard let email = emailTextField.text,
               let password = passwordTextField.text
-        else { return }
+        else {
+
+            return }
 
         if !isEmailValid(email) {
             self.presentAlert(title: Unify.strings.error, message: UnifyErrors.invalidEmail.rawValue, buttonTitle: Unify.strings.ok)
@@ -54,8 +56,12 @@ class EmailSignUpViewController: OnboardingViewController {
             return
         }
 
+
+
         self.viewModel.createAccountWithEmail(email: email, password: password) { success, error  in
             if success {
+                print(success)
+
                 self.navigationController?.pushViewController(CreateUsernameViewController(viewModel: OnboardingViewModel()), animated: true)
             }
             

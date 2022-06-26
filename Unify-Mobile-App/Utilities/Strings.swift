@@ -13,6 +13,10 @@ public class Strings {
         return NSLocalizedString("cell", comment: "")
     }
 
+    public var databaseRegion: String {
+        return NSLocalizedString("https://unify-mobile-app-5ef49-default-rtdb.europe-west1.firebasedatabase.app", comment: "")
+    }
+
     public var add: String {
         return NSLocalizedString("Add", comment: "")
     }
