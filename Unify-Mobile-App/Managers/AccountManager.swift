@@ -48,7 +48,8 @@ class AccountManager {
 
     public func configureCurrentUser(users: [User], completion: @escaping ([User]) -> Void) {
         let filteredUsers = users.filter { $0.uid == currentUser?.uid }
-        completion(filteredUsers)
+        print("here is the func", users, currentUser?.uid)
+        return completion(filteredUsers)
     }
 
     public func allowUsersToPreviewApp() { // Allow users to browse but not to message others.

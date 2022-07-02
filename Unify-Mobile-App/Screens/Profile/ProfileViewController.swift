@@ -93,7 +93,7 @@ class ProfileViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
         } else {
             let actionOne = UIAlertAction(title: Unify.strings.edit_profile, style: .default) { [weak self] action  in
-                self?.present(EditProfileViewController(), animated: true)
+                self?.navigationController?.pushViewController(EditProfileViewController(viewModel: EditProfileViewModel(user: self?.viewModel.user ?? Unify.defaultUser)), animated: true)
             }
 
             let actionTwo = UIAlertAction(title: Unify.strings.settings, style: .default) { action in }
@@ -161,9 +161,10 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: FloatyDelegate {
     
     @objc func returnToHome() {
-        let viewModel = HomeViewModel()
-        let viewController = HomeViewController(viewModel: viewModel)
-        navigationController?.pushViewController(viewController, animated: true)
+//        let viewModel = HomeViewModel()
+//        let viewController = HomeViewController(viewModel: viewModel)
+//        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func returnToMessages() {
@@ -172,7 +173,7 @@ extension ProfileViewController: FloatyDelegate {
     }
     
     @objc func returnToProfile() {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true)
     }
     
     @objc func appLogOut() {

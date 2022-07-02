@@ -31,14 +31,21 @@ class HomeViewModel {
     }
 
     public func fetchAllUsers() {
+
         NetworkManager.shared.fetchAllUsers { (users) in
             self.usersObservable.wrappedValue = users
+            self.fetchCurrentUserProfile()
         }
     }
 
-//    public func fetchCurrentUserProfile() -> [User]? {
-//        return NetworkManager.shared.configureCurrentUser(currentUserId: currentUser?.uid ?? "No ID")
-//    }
+    public func fetchCurrentUserProfile() {
+        AccountManager.account.configureCurrentUser(users: usersObservable.wrappedValue) { users in
+            guard let user = users.object(at: 0) else { return }
+            print(user)
+            self.user.wrappedValue = user
+                //   return completion(user)
+        }
+    }
 
    public func retrieveUsersFromUniversity(uni: String) -> [User]? {
         return NetworkManager.shared.retrieveUsersFromUniversity(university: uni)

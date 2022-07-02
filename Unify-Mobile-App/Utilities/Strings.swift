@@ -169,6 +169,14 @@ public class Strings {
         return NSLocalizedString("profile_picture", comment: "")
     }
 
+    public var name: String {
+        return NSLocalizedString("name", comment: "")
+    }
+
+    public var year: String {
+        return NSLocalizedString("year", comment: "")
+    }
+
     public var profile_url: String {
         return NSLocalizedString("profile_url", comment: "")
     }

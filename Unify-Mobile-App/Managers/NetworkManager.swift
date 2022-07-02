@@ -32,7 +32,12 @@ class NetworkManager {
     func createAccountViaEmail(email: String, password: String, completion: @escaping (AuthDataResult, Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             guard let auth = result else { return }
-
+//            self.signInViaEmail(email: email, password: password) { success, error in
+//                if error != nil {
+//                    return print(error?.localizedDescription)
+//                }
+//                completion(auth, error)
+//            }
             completion(auth, error)
         }
     }
@@ -225,7 +230,6 @@ extension NetworkManager {
             completion(false)
             return
         }
-        print("1")
         let imageName = UUID().uuidString
         let imageReference = Storage.storage().reference().child(Unify.strings.profile_picture).child(imageName)
 
@@ -234,7 +238,6 @@ extension NetworkManager {
 
             imageReference.downloadURL { (url, error) in
                 if error != nil { return }
-                print("2")
 
                 guard let url = url else { return }
 

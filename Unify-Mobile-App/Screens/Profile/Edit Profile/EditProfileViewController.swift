@@ -9,30 +9,40 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
-    private let cancelEditingButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("X", for: .normal)
-        button.setTitleColor(.unifyGray, for: .normal)
-        button.addTarget(self, action: #selector(cancelEditPressed), for: .touchUpInside)
-        return button
+    // MARK: - Private
+
+    private let header: EditProfileHeaderView = {
+        let view = EditProfileHeaderView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
 
-    private lazy var saveButton: UnifyButton = {
-        let button = UnifyButton()
-        button.configure(buttonText: Unify.strings.save, textColor: .white, backgroundColors: .unifyBlue)
-        button.isUserInteractionEnabled = false
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
-        return button
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(EditAvatarTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
+        tableView.register(EditNameTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
+        tableView.register(EditYearTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
+        tableView.register(EditCourseTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
+        tableView.register(EditUniversityTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .red
+        tableView.keyboardDismissMode = .interactive
+        tableView.allowsSelection = false
+        tableView.separatorStyle = .none
+        return tableView
     }()
 
-    @objc func cancelEditPressed() {
-        dismiss(animated: true, completion: nil)
+    private let viewModel: EditProfileViewModel!
+
+    init(viewModel: EditProfileViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
 
-    @objc func saveButtonPressed() {
-        dismiss(animated: true, completion: nil)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -45,19 +55,58 @@ class EditProfileViewController: UIViewController {
 private extension EditProfileViewController {
     func setup() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
 
-        view.addSubview(cancelEditingButton)
-        view.addSubview(saveButton)
+        view.addSubview(tableView)
 
-        cancelEditingButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        cancelEditingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        cancelEditingButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        cancelEditingButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+}
 
-        saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
-        saveButton.heightAnchor.constraint(equalToConstant: 54).isActive = true
-        saveButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
-        saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let section = indexPath.section
+
+        if section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EditNameTableViewCell
+            cell?.configure(user: viewModel.user)
+        } else if section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EditUniversityTableViewCell
+            cell?.configure(user: viewModel.user)
+            return cell ?? UITableViewCell()
+        } else if section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EditCourseTableViewCell
+            cell?.configure(user: viewModel.user)
+            return cell ?? UITableViewCell()
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EditYearTableViewCell
+            cell?.configure(user: viewModel.user)
+            return cell ?? UITableViewCell()
+        }
+        return UITableViewCell()
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 54
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
+    }
+}
+
+extension EditProfileViewController: EditProfileHeaderViewDelegate {
+    func saveEditChanges(_ headerView: EditProfileHeaderView) {
+        viewModel.saveUserProfile()
+    }
+
+    func didCancelEditChanges(_ headerView: EditProfileHeaderView) {
+        dismiss(animated: true, completion: nil)
     }
 }

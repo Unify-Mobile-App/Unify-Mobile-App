@@ -124,12 +124,9 @@ extension HomeViewController: FloatyDelegate {
     }
 
     @objc func returnToProfile() {
-
-//        guard let user2 = viewModel.fetchCurrentUserProfile() else { return }
-//
-//        let viewModel =  ProfileViewModel(user: user2[0])
-//        let viewController = ProfileViewController(viewModel: viewModel)
-//        navigationController?.pushViewController(viewController, animated: true)
+        let viewModel = ProfileViewModel(user: self.viewModel.user.wrappedValue ?? Unify.defaultUser)
+        let viewController = ProfileViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func appLogOut() {
