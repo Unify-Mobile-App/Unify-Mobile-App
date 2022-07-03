@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol EditYearTableViewCellDelegate: AnyObject {
+    func saveYearChanges(_ cell: EditYearTableViewCell, string: String?)
+}
+
 class EditYearTableViewCell: UITableViewCell {
+
+    public weak var delegate: EditYearTableViewCellDelegate?
 
     private let yearLabel: UILabel = {
         let label = UILabel()
@@ -52,14 +58,15 @@ extension EditYearTableViewCell {
 
         yearLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         yearLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        yearLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.2).isActive = true
 
         yearTextField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        yearTextField.leadingAnchor.constraint(equalTo: yearLabel.trailingAnchor).isActive = true
+        yearTextField.leadingAnchor.constraint(equalTo:  yearLabel.trailingAnchor).isActive = true
         yearTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
 
         underline.topAnchor.constraint(equalTo: yearTextField.bottomAnchor, constant: 5).isActive = true
-        underline.leadingAnchor.constraint(equalTo: yearTextField.leadingAnchor).isActive = true
-        underline.trailingAnchor.constraint(equalTo: yearTextField.trailingAnchor).isActive = true
+        underline.leadingAnchor.constraint(equalTo: yearLabel.trailingAnchor, constant: 6).isActive = true
+        underline.trailingAnchor.constraint(equalTo: yearTextField.leadingAnchor).isActive = true
         underline.heightAnchor.constraint(equalToConstant: 2).isActive = true
     }
 }

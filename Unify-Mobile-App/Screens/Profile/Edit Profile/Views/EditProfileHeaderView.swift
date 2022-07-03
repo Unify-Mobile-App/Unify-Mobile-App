@@ -89,7 +89,7 @@ extension EditProfileHeaderView {
         stackView.addArrangedSubview(editProfileLabel)
         stackView.addArrangedSubview(saveButton)
 
-        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         stackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

@@ -104,6 +104,7 @@
 		1271B1FE28684DE600C6CF84 /* FirebaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */; };
 		12A95828286F9DEB00DC346E /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A95827286F9DEB00DC346E /* EditProfileViewModel.swift */; };
 		12EC876F2870718300C757F8 /* EditProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC876E2870718300C757F8 /* EditProfileHeaderView.swift */; };
+		12EC87712870888700C757F8 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC87702870888700C757F8 /* ReusableView.swift */; };
 		607EA49A0C42C76742B7206B /* Pods_Unify_Mobile_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5674DCC93F9A5BFFD56156D6 /* Pods_Unify_Mobile_App.framework */; };
 		C34AD1194851D09BE5EF72EC /* Pods_Unify_Mobile_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C12D687DAE9C27142FE8D5 /* Pods_Unify_Mobile_AppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -210,6 +211,7 @@
 		1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMocks.swift; sourceTree = "<group>"; };
 		12A95827286F9DEB00DC346E /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		12EC876E2870718300C757F8 /* EditProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeaderView.swift; sourceTree = "<group>"; };
+		12EC87702870888700C757F8 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		1618A9DAAEAE736B03957898 /* Pods-Unify-Mobile-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unify-Mobile-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Unify-Mobile-AppTests/Pods-Unify-Mobile-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		172ACBA7F5A912C79A7126C9 /* Pods_Unify_Mobile_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unify_Mobile_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D31F0E0E5BF0D35A109AC18 /* Pods-Unify-Mobile-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unify-Mobile-App.debug.xcconfig"; path = "Target Support Files/Pods-Unify-Mobile-App/Pods-Unify-Mobile-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				12200C3D2849560E009C315E /* Unify.swift */,
 				12200C342849560E009C315E /* Strings.swift */,
 				12200C352849560E009C315E /* UnifyColors.swift */,
+				12EC87702870888700C757F8 /* ReusableView.swift */,
 				12200C362849560E009C315E /* UnifyErrors.swift */,
 				12200C372849560E009C315E /* Extensions */,
 			);
@@ -549,10 +552,10 @@
 		12200CAD284A1950009C315E /* Edit Profile */ = {
 			isa = PBXGroup;
 			children = (
+				12EC877228708F3100C757F8 /* Views */,
 				123604A0286A4EFB0023C1BD /* Cells */,
 				12200CAE284A1950009C315E /* EditProfileViewController.swift */,
 				12A95827286F9DEB00DC346E /* EditProfileViewModel.swift */,
-				12EC876E2870718300C757F8 /* EditProfileHeaderView.swift */,
 			);
 			path = "Edit Profile";
 			sourceTree = "<group>";
@@ -698,6 +701,14 @@
 				1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		12EC877228708F3100C757F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12EC876E2870718300C757F8 /* EditProfileHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		25360DFC4C1CBFCDACB0E07D /* Frameworks */ = {
@@ -1063,6 +1074,7 @@
 				12200C2D28494D7B009C315E /* UnifyTextField.swift in Sources */,
 				12200CC1284A1950009C315E /* HomeViewModel.swift in Sources */,
 				12200C9728497651009C315E /* PrivateInfrormationViewController.swift in Sources */,
+				12EC87712870888700C757F8 /* ReusableView.swift in Sources */,
 				12200C9628497651009C315E /* CreateUsernameViewController.swift in Sources */,
 				12200C9528497651009C315E /* SelectCourseViewController.swift in Sources */,
 				12200C2B28494D7B009C315E /* UnifyTitleLabel.swift in Sources */,

@@ -11,7 +11,9 @@ class EditProfileViewModel {
 
     public let user: User
 
-    func saveUserProfile
+    func saveUserProfile() {
+        print("save pressed")
+    }
     init(user: User) {
         self.user = user
     }

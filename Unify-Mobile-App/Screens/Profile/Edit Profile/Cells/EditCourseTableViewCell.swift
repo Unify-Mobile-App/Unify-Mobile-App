@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol EditCourseTableViewCellDelegate: AnyObject {
+    func saveCourseChanges(_ cell: EditCourseTableViewCell, string: String?)
+}
+
 class EditCourseTableViewCell: UITableViewCell {
+
+    public weak var delegate: EditCourseTableViewCellDelegate?
 
     private let courseLabel: UILabel = {
         let label = UILabel()
@@ -52,6 +58,7 @@ extension EditCourseTableViewCell {
 
         courseLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         courseLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        courseLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.2).isActive = true
 
         courseTextField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         courseTextField.leadingAnchor.constraint(equalTo: courseLabel.trailingAnchor).isActive = true

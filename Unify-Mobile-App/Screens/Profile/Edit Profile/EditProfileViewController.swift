@@ -11,7 +11,7 @@ class EditProfileViewController: UIViewController {
 
     // MARK: - Private
 
-    private let header: EditProfileHeaderView = {
+    private let headerView: EditProfileHeaderView = {
         let view = EditProfileHeaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -19,15 +19,14 @@ class EditProfileViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(EditAvatarTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
-        tableView.register(EditNameTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
-        tableView.register(EditYearTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
-        tableView.register(EditCourseTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
-        tableView.register(EditUniversityTableViewCell.self, forCellReuseIdentifier: Unify.strings.cell)
+        tableView.register(EditAvatarTableViewCell.self)
+        tableView.register(EditNameTableViewCell.self)
+        tableView.register(EditYearTableViewCell.self)
+        tableView.register(EditCourseTableViewCell.self)
+        tableView.register(EditUniversityTableViewCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .red
         tableView.keyboardDismissMode = .interactive
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
@@ -35,6 +34,8 @@ class EditProfileViewController: UIViewController {
     }()
 
     private let viewModel: EditProfileViewModel!
+
+    // MARK: - View lifecycle
 
     init(viewModel: EditProfileViewModel) {
         self.viewModel = viewModel
@@ -49,51 +50,41 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
-
 }
 
-private extension EditProfileViewController {
-    func setup() {
-        view.backgroundColor = .white
-
-        view.addSubview(tableView)
-
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-    }
-}
+// MARK: - TableView DataSource & Delegate
 
 extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = indexPath.section
-
-        if section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EditNameTableViewCell
-            cell?.configure(user: viewModel.user)
-        } else if section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EditUniversityTableViewCell
-            cell?.configure(user: viewModel.user)
-            return cell ?? UITableViewCell()
-        } else if section == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EditCourseTableViewCell
-            cell?.configure(user: viewModel.user)
-            return cell ?? UITableViewCell()
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as EditAvatarTableViewCell
+            return cell
+        } else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as EditNameTableViewCell
+            cell.configure(user: viewModel.user)
+            cell.delegate = self
+            return cell
+        } else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as EditUniversityTableViewCell
+            cell.configure(user: viewModel.user)
+            cell.delegate = self
+            return cell
+        } else if indexPath.section == 3 {
+            let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as EditCourseTableViewCell
+            cell.configure(user: viewModel.user)
+            cell.delegate = self
+            return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EditYearTableViewCell
-            cell?.configure(user: viewModel.user)
-            return cell ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as EditYearTableViewCell
+            cell.configure(user: viewModel.user)
+            cell.delegate = self
+            return cell
         }
-        return UITableViewCell()
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 54
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -108,5 +99,48 @@ extension EditProfileViewController: EditProfileHeaderViewDelegate {
 
     func didCancelEditChanges(_ headerView: EditProfileHeaderView) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+private extension EditProfileViewController {
+    func setup() {
+        view.backgroundColor = .white
+        navigationController?.isNavigationBarHidden = true
+        view.addSubview(tableView)
+        view.addSubview(headerView)
+
+        headerView.delegate = self
+        headerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        headerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        headerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+
+        tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+}
+
+extension EditProfileViewController: EditUsernameTableViewCellDelegate {
+    func saveUsernameChanges(_ cell: EditNameTableViewCell, string: String?) {
+        print("save pressed")
+    }
+}
+
+extension EditProfileViewController: EditUniversityTableViewCellDelegate {
+    func saveUniversityChanges(_ cell: EditUniversityTableViewCell, string: String?) {
+        print("university pressed")
+    }
+}
+
+extension EditProfileViewController: EditCourseTableViewCellDelegate {
+    func saveCourseChanges(_ cell: EditCourseTableViewCell, string: String?) {
+        print("course pressed")
+    }
+}
+
+extension EditProfileViewController: EditYearTableViewCellDelegate {
+    func saveYearChanges(_ cell: EditYearTableViewCell, string: String?) {
+        print("year pressed")
     }
 }

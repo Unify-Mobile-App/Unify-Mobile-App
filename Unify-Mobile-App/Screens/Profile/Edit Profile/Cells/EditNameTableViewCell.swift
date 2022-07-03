@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol EditUsernameTableViewCellDelegate: AnyObject {
+    func saveUsernameChanges(_ cell: EditNameTableViewCell, string: String?)
+}
+
 class EditNameTableViewCell: UITableViewCell {
+
+    public weak var delegate: EditUsernameTableViewCellDelegate?
 
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Unify.strings.name
+        label.sizeToFit()
         return label
     }()
 
@@ -52,13 +59,14 @@ extension EditNameTableViewCell {
 
         nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        nameLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.2).isActive = true
 
         nameTextField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         nameTextField.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
         nameTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
 
         underline.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 5).isActive = true
-        underline.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor).isActive = true
+        underline.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 6).isActive = true
         underline.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor).isActive = true
         underline.heightAnchor.constraint(equalToConstant: 2).isActive = true
     }
