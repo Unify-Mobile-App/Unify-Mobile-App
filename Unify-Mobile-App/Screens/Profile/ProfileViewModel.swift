@@ -12,14 +12,7 @@ class ProfileViewModel {
     public var user: User
     public let currentUser = AccountManager.account.currentUser
 
-
-    func updateProfileInformation() {
-        
-    }
-
     init(user: User) {
         self.user = user
-
-        print(user.uid, currentUser?.uid)
     }
 }

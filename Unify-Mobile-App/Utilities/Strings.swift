@@ -170,11 +170,11 @@ public class Strings {
     }
 
     public var name: String {
-        return NSLocalizedString("name", comment: "")
+        return NSLocalizedString("Name", comment: "")
     }
 
     public var year: String {
-        return NSLocalizedString("year", comment: "")
+        return NSLocalizedString("Year", comment: "")
     }
 
     public var profile_url: String {

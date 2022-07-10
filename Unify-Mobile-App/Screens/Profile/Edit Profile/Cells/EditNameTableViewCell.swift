@@ -20,14 +20,21 @@ class EditNameTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Unify.strings.name
         label.sizeToFit()
+        
         return label
     }()
 
     private let nameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(usernameDidUpdate), for: .editingChanged)
+        textField.addTarget(self, action: #selector(usernameDidUpdate), for: .editingDidBegin)
         return textField
     }()
+
+    @objc func usernameDidUpdate() {
+        delegate?.saveUsernameChanges(self, string: nameTextField.text)
+    }
 
     private let underline: UIView = {
         let view = UIView()
@@ -67,7 +74,7 @@ extension EditNameTableViewCell {
 
         underline.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 5).isActive = true
         underline.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 6).isActive = true
-        underline.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor).isActive = true
+        underline.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 6).isActive = true
         underline.heightAnchor.constraint(equalToConstant: 2).isActive = true
     }
 }

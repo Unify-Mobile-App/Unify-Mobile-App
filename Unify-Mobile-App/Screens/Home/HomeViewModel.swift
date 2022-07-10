@@ -41,7 +41,6 @@ class HomeViewModel {
     public func fetchCurrentUserProfile() {
         AccountManager.account.configureCurrentUser(users: usersObservable.wrappedValue) { users in
             guard let user = users.object(at: 0) else { return }
-            print(user)
             self.user.wrappedValue = user
                 //   return completion(user)
         }

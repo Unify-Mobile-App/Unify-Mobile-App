@@ -30,6 +30,7 @@ class EditProfileViewController: UIViewController {
         tableView.keyboardDismissMode = .interactive
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .green
         return tableView
     }()
 
@@ -56,6 +57,13 @@ class EditProfileViewController: UIViewController {
 
 extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 150
+        }
+        return 50
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -63,6 +71,7 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as EditAvatarTableViewCell
+            cell.configure(user: viewModel.user)
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as EditNameTableViewCell
@@ -98,7 +107,7 @@ extension EditProfileViewController: EditProfileHeaderViewDelegate {
     }
 
     func didCancelEditChanges(_ headerView: EditProfileHeaderView) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -123,24 +132,28 @@ private extension EditProfileViewController {
 
 extension EditProfileViewController: EditUsernameTableViewCellDelegate {
     func saveUsernameChanges(_ cell: EditNameTableViewCell, string: String?) {
-        print("save pressed")
+        guard let username = string else { return }
+        viewModel.updatedUsername = username
     }
 }
 
 extension EditProfileViewController: EditUniversityTableViewCellDelegate {
     func saveUniversityChanges(_ cell: EditUniversityTableViewCell, string: String?) {
-        print("university pressed")
+        guard let university = string else { return }
+        viewModel.updatedUniversity = university
     }
 }
 
 extension EditProfileViewController: EditCourseTableViewCellDelegate {
     func saveCourseChanges(_ cell: EditCourseTableViewCell, string: String?) {
-        print("course pressed")
+        guard let course = string else { return }
+        viewModel.updatedCourse = course
     }
 }
 
 extension EditProfileViewController: EditYearTableViewCellDelegate {
     func saveYearChanges(_ cell: EditYearTableViewCell, string: String?) {
-        print("year pressed")
+        guard let year = string else { return }
+        viewModel.updatedYear = year
     }
 }

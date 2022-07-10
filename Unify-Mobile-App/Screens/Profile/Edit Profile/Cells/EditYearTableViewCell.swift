@@ -25,8 +25,14 @@ class EditYearTableViewCell: UITableViewCell {
     private let yearTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(yearDidUpdate), for: .editingChanged)
+        textField.addTarget(self, action: #selector(yearDidUpdate), for: .editingDidBegin)
         return textField
     }()
+
+    @objc func yearDidUpdate() {
+        delegate?.saveYearChanges(self, string: yearTextField.text)
+    }
 
     private let underline: UIView = {
         let view = UIView()

@@ -48,7 +48,6 @@ class AccountManager {
 
     public func configureCurrentUser(users: [User], completion: @escaping ([User]) -> Void) {
         let filteredUsers = users.filter { $0.uid == currentUser?.uid }
-        print("here is the func", users, currentUser?.uid)
         return completion(filteredUsers)
     }
 
@@ -64,12 +63,79 @@ class AccountManager {
         completion(true)
     }
 
-    public func updateUsername(displayName: String) {
-        let changeProfile = currentUser?.createProfileChangeRequest()
-        changeProfile?.displayName = displayName
-        changeProfile?.commitChanges(completion: { error in
-            print("present something to say Update Username")
-        })
+    func updateUsername(name: String, completion: @escaping(Bool, Error?) -> Void?) {
+        guard let userId = currentUser?.uid else { return }
+        let database = Database.database(url: NetworkManager.shared.databaseRegion).reference(withPath: "Users/\(userId)")
+
+        let value = ["name": name]
+        database.updateChildValues(value) { error, reference in
+            if error != nil {
+                completion(false, error)
+                return
+            }
+            completion(true, nil)
+            return
+        }
+    }
+
+    func updateUniversity(university: String, completion: @escaping(Bool, Error?) -> Void?) {
+        guard let userId = currentUser?.uid else { return }
+        let database = Database.database(url: NetworkManager.shared.databaseRegion).reference(withPath: "Users/\(userId)")
+
+        let value = ["university_name": university]
+        database.updateChildValues(value) { error, reference in
+            if error != nil {
+                completion(false, error)
+                return
+            }
+            completion(true, nil)
+            return
+        }
+    }
+
+    func updateCourse(course: String, completion: @escaping(Bool, Error?) -> Void?) {
+        guard let userId = currentUser?.uid else { return }
+        let database = Database.database(url: NetworkManager.shared.databaseRegion).reference(withPath: "Users/\(userId)")
+
+        let value = ["course": course]
+        database.updateChildValues(value) { error, reference in
+            if error != nil {
+                completion(false, error)
+                return
+            }
+            completion(true, nil)
+            return
+        }
+    }
+
+    func updateYear(year: String, completion: @escaping(Bool, Error?) -> Void?) {
+        guard let userId = currentUser?.uid else { return }
+        let database = Database.database(url: NetworkManager.shared.databaseRegion).reference(withPath: "Users/\(userId)")
+
+        let value = ["year": year]
+        database.updateChildValues(value) { error, reference in
+            if error != nil {
+                completion(false, error)
+                return
+            }
+            completion(true, nil)
+            return
+        }
+    }
+
+    func updateAvatar(avatar: String, completion: @escaping(Bool, Error?) -> Void?) {
+        guard let userId = currentUser?.uid else { return }
+        let database = Database.database(url: NetworkManager.shared.databaseRegion).reference(withPath: "Users/\(userId)")
+
+        let value = ["profile_picture": avatar]
+        database.updateChildValues(value) { error, reference in
+            if error != nil {
+                completion(false, error)
+                return
+            }
+            completion(true, nil)
+            return
+        }
     }
 
     func updateFriendRequest() { }

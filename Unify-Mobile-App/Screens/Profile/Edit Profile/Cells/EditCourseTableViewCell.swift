@@ -25,8 +25,14 @@ class EditCourseTableViewCell: UITableViewCell {
     private let courseTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(courseDidUpdate), for: .editingChanged)
+        textField.addTarget(self, action: #selector(courseDidUpdate), for: .editingDidBegin)
         return textField
     }()
+
+    @objc func courseDidUpdate() {
+        delegate?.saveCourseChanges(self, string: courseTextField.text)
+    }
 
     private let underline: UIView = {
         let view = UIView()

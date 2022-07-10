@@ -220,9 +220,9 @@ extension ProfileViewController {
         setFloatyConstraints(view: self.view, button: floatingActionButton)
 
         optionsButton.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10).isActive = true
-            optionsButton.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
-            optionsButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-            optionsButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        optionsButton.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
+        optionsButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        optionsButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
         interestsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 10).isActive = true
         interestsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
