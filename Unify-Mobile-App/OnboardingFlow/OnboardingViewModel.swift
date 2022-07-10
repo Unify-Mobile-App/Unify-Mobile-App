@@ -27,7 +27,6 @@ class OnboardingViewModel {
 
     public func signInWithEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         NetworkManager.shared.signInViaEmail(email: email, password: password) { success, error in
-            print(success, error?.localizedDescription)
             if error != nil {
                 return
             }

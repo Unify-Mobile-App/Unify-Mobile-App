@@ -60,7 +60,6 @@ class EmailSignUpViewController: OnboardingViewController {
 
         self.viewModel.createAccountWithEmail(email: email, password: password) { success, error  in
             if success {
-                print(success)
 
                 self.navigationController?.pushViewController(CreateUsernameViewController(viewModel: OnboardingViewModel()), animated: true)
             }

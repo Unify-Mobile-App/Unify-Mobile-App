@@ -82,6 +82,11 @@
 		12200CCA284A1950009C315E /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200CB2284A1950009C315E /* UsersViewController.swift */; };
 		12200CCB284A1950009C315E /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200CB3284A1950009C315E /* UsersViewModel.swift */; };
 		12200CCC284A1950009C315E /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12200CB4284A1950009C315E /* UsersTableViewCell.swift */; };
+		1236049F286A4E390023C1BD /* EditAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1236049E286A4E390023C1BD /* EditAvatarTableViewCell.swift */; };
+		123604A2286A4F440023C1BD /* EditNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123604A1286A4F440023C1BD /* EditNameTableViewCell.swift */; };
+		123604A4286A4F4E0023C1BD /* EditUniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123604A3286A4F4E0023C1BD /* EditUniversityTableViewCell.swift */; };
+		123604A6286A4F700023C1BD /* EditCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123604A5286A4F700023C1BD /* EditCourseTableViewCell.swift */; };
+		123604A8286A4F780023C1BD /* EditYearTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123604A7286A4F780023C1BD /* EditYearTableViewCell.swift */; };
 		125B738F2843F96C00293086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B738E2843F96C00293086 /* AppDelegate.swift */; };
 		125B73912843F96C00293086 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B73902843F96C00293086 /* SceneDelegate.swift */; };
 		125B73962843F96C00293086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B73942843F96C00293086 /* Main.storyboard */; };
@@ -97,6 +102,9 @@
 		125E79C6284BC7D200A0ABC4 /* OnboardingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125E79C5284BC7D200A0ABC4 /* OnboardingViewControllerTests.swift */; };
 		125E79C8284BD2CF00A0ABC4 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125E79C7284BD2CF00A0ABC4 /* NetworkManagerTests.swift */; };
 		1271B1FE28684DE600C6CF84 /* FirebaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */; };
+		12A95828286F9DEB00DC346E /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A95827286F9DEB00DC346E /* EditProfileViewModel.swift */; };
+		12EC876F2870718300C757F8 /* EditProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC876E2870718300C757F8 /* EditProfileHeaderView.swift */; };
+		12EC87712870888700C757F8 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC87702870888700C757F8 /* ReusableView.swift */; };
 		607EA49A0C42C76742B7206B /* Pods_Unify_Mobile_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5674DCC93F9A5BFFD56156D6 /* Pods_Unify_Mobile_App.framework */; };
 		C34AD1194851D09BE5EF72EC /* Pods_Unify_Mobile_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C12D687DAE9C27142FE8D5 /* Pods_Unify_Mobile_AppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -177,6 +185,11 @@
 		12200CB2284A1950009C315E /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		12200CB3284A1950009C315E /* UsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		12200CB4284A1950009C315E /* UsersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		1236049E286A4E390023C1BD /* EditAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAvatarTableViewCell.swift; sourceTree = "<group>"; };
+		123604A1286A4F440023C1BD /* EditNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameTableViewCell.swift; sourceTree = "<group>"; };
+		123604A3286A4F4E0023C1BD /* EditUniversityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUniversityTableViewCell.swift; sourceTree = "<group>"; };
+		123604A5286A4F700023C1BD /* EditCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseTableViewCell.swift; sourceTree = "<group>"; };
+		123604A7286A4F780023C1BD /* EditYearTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditYearTableViewCell.swift; sourceTree = "<group>"; };
 		125B738B2843F96B00293086 /* Unify-Mobile-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unify-Mobile-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		125B738E2843F96C00293086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		125B73902843F96C00293086 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +209,9 @@
 		125E79C5284BC7D200A0ABC4 /* OnboardingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewControllerTests.swift; sourceTree = "<group>"; };
 		125E79C7284BD2CF00A0ABC4 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMocks.swift; sourceTree = "<group>"; };
+		12A95827286F9DEB00DC346E /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		12EC876E2870718300C757F8 /* EditProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeaderView.swift; sourceTree = "<group>"; };
+		12EC87702870888700C757F8 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		1618A9DAAEAE736B03957898 /* Pods-Unify-Mobile-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unify-Mobile-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Unify-Mobile-AppTests/Pods-Unify-Mobile-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		172ACBA7F5A912C79A7126C9 /* Pods_Unify_Mobile_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unify_Mobile_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D31F0E0E5BF0D35A109AC18 /* Pods-Unify-Mobile-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unify-Mobile-App.debug.xcconfig"; path = "Target Support Files/Pods-Unify-Mobile-App/Pods-Unify-Mobile-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +372,7 @@
 				12200C3D2849560E009C315E /* Unify.swift */,
 				12200C342849560E009C315E /* Strings.swift */,
 				12200C352849560E009C315E /* UnifyColors.swift */,
+				12EC87702870888700C757F8 /* ReusableView.swift */,
 				12200C362849560E009C315E /* UnifyErrors.swift */,
 				12200C372849560E009C315E /* Extensions */,
 			);
@@ -535,7 +552,10 @@
 		12200CAD284A1950009C315E /* Edit Profile */ = {
 			isa = PBXGroup;
 			children = (
+				12EC877228708F3100C757F8 /* Views */,
+				123604A0286A4EFB0023C1BD /* Cells */,
 				12200CAE284A1950009C315E /* EditProfileViewController.swift */,
+				12A95827286F9DEB00DC346E /* EditProfileViewModel.swift */,
 			);
 			path = "Edit Profile";
 			sourceTree = "<group>";
@@ -565,6 +585,18 @@
 				12200CD5284A2800009C315E /* Extensions */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		123604A0286A4EFB0023C1BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1236049E286A4E390023C1BD /* EditAvatarTableViewCell.swift */,
+				123604A1286A4F440023C1BD /* EditNameTableViewCell.swift */,
+				123604A3286A4F4E0023C1BD /* EditUniversityTableViewCell.swift */,
+				123604A5286A4F700023C1BD /* EditCourseTableViewCell.swift */,
+				123604A7286A4F780023C1BD /* EditYearTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		125B73822843F96B00293086 = {
@@ -669,6 +701,14 @@
 				1271B1FD28684DE600C6CF84 /* FirebaseMocks.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		12EC877228708F3100C757F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12EC876E2870718300C757F8 /* EditProfileHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		25360DFC4C1CBFCDACB0E07D /* Frameworks */ = {
@@ -999,11 +1039,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12A95828286F9DEB00DC346E /* EditProfileViewModel.swift in Sources */,
 				12200C152849475B009C315E /* StudyYearData.swift in Sources */,
 				12200C2E28494D7B009C315E /* UnifyNavigationController.swift in Sources */,
 				12200C132849475B009C315E /* User.swift in Sources */,
 				12200C172849475B009C315E /* Interest.swift in Sources */,
 				12200CCA284A1950009C315E /* UsersViewController.swift in Sources */,
+				12EC876F2870718300C757F8 /* EditProfileHeaderView.swift in Sources */,
+				123604A4286A4F4E0023C1BD /* EditUniversityTableViewCell.swift in Sources */,
 				12200C112849475B009C315E /* ChatUser.swift in Sources */,
 				12200C1F28494D5E009C315E /* OnboardingViewController.swift in Sources */,
 				12200C0E2849475B009C315E /* LatestMessage.swift in Sources */,
@@ -1011,7 +1054,9 @@
 				12200CCC284A1950009C315E /* UsersTableViewCell.swift in Sources */,
 				12200C9828497651009C315E /* SelectYearViewController.swift in Sources */,
 				1271B1FE28684DE600C6CF84 /* FirebaseMocks.swift in Sources */,
+				123604A2286A4F440023C1BD /* EditNameTableViewCell.swift in Sources */,
 				12200CA22849785C009C315E /* AppleAccountManager.swift in Sources */,
+				1236049F286A4E390023C1BD /* EditAvatarTableViewCell.swift in Sources */,
 				12200C7C2849761E009C315E /* EmailVerificationViewController.swift in Sources */,
 				12200CC8284A1950009C315E /* ProfileViewController.swift in Sources */,
 				12200CCB284A1950009C315E /* UsersViewModel.swift in Sources */,
@@ -1021,6 +1066,7 @@
 				12200C3028494D7B009C315E /* AvatarView.swift in Sources */,
 				12200C182849475B009C315E /* InterestData.swift in Sources */,
 				12200C0C2849475B009C315E /* Course.swift in Sources */,
+				123604A8286A4F780023C1BD /* EditYearTableViewCell.swift in Sources */,
 				12200CC2284A1950009C315E /* HomeViewController.swift in Sources */,
 				12200C0B2849475B009C315E /* CourseData.swift in Sources */,
 				12200C9D28497651009C315E /* SelectInterestsViewController.swift in Sources */,
@@ -1028,6 +1074,7 @@
 				12200C2D28494D7B009C315E /* UnifyTextField.swift in Sources */,
 				12200CC1284A1950009C315E /* HomeViewModel.swift in Sources */,
 				12200C9728497651009C315E /* PrivateInfrormationViewController.swift in Sources */,
+				12EC87712870888700C757F8 /* ReusableView.swift in Sources */,
 				12200C9628497651009C315E /* CreateUsernameViewController.swift in Sources */,
 				12200C9528497651009C315E /* SelectCourseViewController.swift in Sources */,
 				12200C2B28494D7B009C315E /* UnifyTitleLabel.swift in Sources */,
@@ -1046,6 +1093,7 @@
 				12200C122849475B009C315E /* OnboardingStatesCompletion.swift in Sources */,
 				12200CC9284A1950009C315E /* ProfileViewModel.swift in Sources */,
 				12200C3F2849560E009C315E /* Strings.swift in Sources */,
+				123604A6286A4F700023C1BD /* EditCourseTableViewCell.swift in Sources */,
 				12200C102849475B009C315E /* Message.swift in Sources */,
 				125B738F2843F96C00293086 /* AppDelegate.swift in Sources */,
 				125B73912843F96C00293086 /* SceneDelegate.swift in Sources */,
