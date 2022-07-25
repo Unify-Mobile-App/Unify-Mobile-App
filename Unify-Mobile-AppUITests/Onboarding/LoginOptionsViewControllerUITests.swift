@@ -32,15 +32,15 @@ class LoginOptionsViewControllerUITests: XCTestCase {
         expect(subTitleExists).to(beTruthy())
     }
 
-    func test_terms_of_service_navigation() throws {
-        let presentationVerifier = PresentationVerifier()
-
-        let termsButtonTap = app/*@START_MENU_TOKEN@*/.staticTexts["Click to read our terms of service"]/*[[".buttons[\"Click to read our terms of service\"].staticTexts[\"Click to read our terms of service\"]",".staticTexts[\"Click to read our terms of service\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        var nextViewController: LoginOptionsViewController? = presentationVerifier.verify(animated: true, presentingViewController: loginOptionsViewController)
-        XCTAssertEqual(nextViewController?.termsAndConditionsButton, "Hello!")
-
-      //  expect(termsButtonTap).to(<#Predicate<Void>#>)
-    }
+//    func test_terms_of_service_navigation() throws {
+//        let presentationVerifier = PresentationVerifier()
+//
+//        let termsButtonTap = app/*@START_MENU_TOKEN@*/.staticTexts["Click to read our terms of service"]/*[[".buttons[\"Click to read our terms of service\"].staticTexts[\"Click to read our terms of service\"]",".staticTexts[\"Click to read our terms of service\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        var nextViewController: LoginOptionsViewController? = presentationVerifier.verify(animated: true, presentingViewController: loginOptionsViewController)
+//        XCTAssertEqual(nextViewController?.termsAndConditionsButton, "Hello!")
+//
+//      //  expect(termsButtonTap).to(<#Predicate<Void>#>)
+//    }
 
     override func tearDownWithError() throws {
         app.terminate()
